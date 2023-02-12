@@ -50,7 +50,7 @@ public class Game {
             playRound();
             victory = (checkVictory(HUMAN_PLAYER) || checkVictory(BOT_PLAYER));
         }
-
+        printBoard();
         System.out.println("Player " + winner + " Won!");
     }
 
@@ -67,7 +67,7 @@ public class Game {
 
     private void botRound() {
         int move;
-        move = bot.minmax(true, board, 9).bestMove();
+        move = bot.minmax(true, board).bestMove();
         makeMove(move);
     }
 
